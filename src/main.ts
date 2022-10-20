@@ -1,6 +1,9 @@
-import { add } from '~/add'
-const s:string = 'asdfgh'
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from '~/router'
+import { createPinia } from 'pinia'
 
-console.log(s + add(2, 6))
-
-document.querySelector('#app').innerHTML = 'asd'
+createApp(App)
+.use(router)
+.use(createPinia())
+.mount('#app')
