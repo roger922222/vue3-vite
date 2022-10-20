@@ -1,5 +1,5 @@
-import { defineStore, acceptHMRUpdate } from 'pinia'
-import { ref } from 'vue'
+// import { defineStore, acceptHMRUpdate } from 'pinia'
+// import { ref } from 'vue'
 
 export const useUserStore = defineStore('user', () => {
   const count = ref(0)

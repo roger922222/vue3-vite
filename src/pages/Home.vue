@@ -6,7 +6,6 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref } from 'vue'
   const num = ref(0)
   const add = () => {
     num.value++

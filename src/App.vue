@@ -23,6 +23,8 @@
 </template>
 
 <script lang="ts" setup>
+  const count = ref(0)
+  const router = useRouter()
   // import { useUserStore } from '~/stores/user'
   // import { useTestStore } from '~/stores/test'
   // const user = useUserStore()
