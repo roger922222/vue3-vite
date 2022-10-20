@@ -7,6 +7,7 @@ import Pages from 'vite-plugin-pages'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Layouts from 'vite-plugin-vue-layouts'
+import VueI18n from '@intlify/vite-plugin-vue-i18n'
 
 export default defineConfig({
   plugins: [
@@ -29,7 +30,7 @@ export default defineConfig({
     }),
     Layouts(),
     AutoImport({
-      imports: ['vue', 'vue-router', 'pinia'],
+      imports: ['vue', 'vue-router', 'pinia', 'vue-i18n'],
       dts: './auto-imports.d.ts',
     }),
     Components({
@@ -38,6 +39,9 @@ export default defineConfig({
       exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
       dts: './component.d.ts',
       dirs: ['src/components', 'src/**/components'],
+    }),
+    VueI18n({
+      include: [path.resolve(__dirname, 'locales/**')]
     })
   ],
   resolve: {

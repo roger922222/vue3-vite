@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     Abc: typeof import('./src/pages/dashboard/components/not-route.vue')['default']
     Card: typeof import('./src/components/Card.vue')['default']
     FooterContent: typeof import('./src/components/FooterContent.vue')['default']
+    Language: typeof import('./src/components/Language.vue')['default']
     Navbar: typeof import('./src/components/Navbar.vue')['default']
     NotRoute: typeof import('./src/pages/dashboard/components/not-route.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
