@@ -2,6 +2,7 @@
   <div>
     <h1>Home</h1>
     <button @click="add">{{ num }}</button>
+    <div>没有配置layout 走默认的 layout</div>
   </div>
 </template>
 
@@ -11,3 +12,5 @@
     num.value++
   }
 </script>
+
+

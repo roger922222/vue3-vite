@@ -6,6 +6,7 @@ import { presetUno, presetAttributify, presetIcons } from 'unocss'
 import Pages from 'vite-plugin-pages'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import Layouts from 'vite-plugin-vue-layouts'
 
 export default defineConfig({
   plugins: [
@@ -20,8 +21,13 @@ export default defineConfig({
       ]
     }),
     Pages({
-      extensions: ['vue']
+      extensions: ['vue'],
+      exclude: ['**/components/*.vue'],
+      extendRoute(route) {
+        console.log(route, 'route')
+      }
     }),
+    Layouts(),
     AutoImport({
       imports: ['vue', 'vue-router', 'pinia'],
       dts: './auto-imports.d.ts',
@@ -30,7 +36,8 @@ export default defineConfig({
       extensions: ['vue'],
       include: [/\.vue$/, /\.vue\?vue/],
       exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
-      dirs: ['src/components'],
+      dts: './component.d.ts',
+      dirs: ['src/components', 'src/**/components'],
     })
   ],
   resolve: {
