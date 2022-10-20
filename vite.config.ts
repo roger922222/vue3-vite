@@ -30,8 +30,12 @@ export default defineConfig({
     }),
     Layouts(),
     AutoImport({
-      imports: ['vue', 'vue-router', 'pinia', 'vue-i18n'],
+      imports: ['vue', 'vue-router', 'pinia', 'vue-i18n', '@vueuse/core', '@vueuse/head'],
       dts: './auto-imports.d.ts',
+      dirs: [
+        'src/composables'
+      ],
+      vueTemplate: true
     }),
     Components({
       extensions: ['vue'],

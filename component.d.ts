@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Abc: typeof import('./src/pages/dashboard/components/not-route.vue')['default']
     Card: typeof import('./src/components/Card.vue')['default']
+    Dark: typeof import('./src/components/Dark.vue')['default']
     FooterContent: typeof import('./src/components/FooterContent.vue')['default']
     Language: typeof import('./src/components/Language.vue')['default']
     Navbar: typeof import('./src/components/Navbar.vue')['default']

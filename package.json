@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vueuse/core": "^9.3.1",
+    "@vueuse/head": "^0.9.8",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.23",
     "vue": "^3.2.41",

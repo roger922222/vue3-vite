@@ -1,0 +1,9 @@
+<template>
+  <button class="mx-2 !outline-none text-2xl" @click="toggleDark()">
+    <div class="i-carbo-sun dark:i-carbon-moon"></div>
+  </button>
+</template>
+
+<script lang="ts" setup>
+  
+</script>
