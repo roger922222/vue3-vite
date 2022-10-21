@@ -2,12 +2,17 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import Vue from '@vitejs/plugin-vue'
 import Unocss from 'unocss/vite'
-import { presetUno, presetAttributify, presetIcons } from 'unocss'
+import presetAttributify from '@unocss/preset-attributify'
+import presetIcons from '@unocss/preset-icons'
+import presetUno from '@unocss/preset-uno'
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 import Pages from 'vite-plugin-pages'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Layouts from 'vite-plugin-vue-layouts'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
+
+const iconDirectory = path.resolve(__dirname, 'src/icons')
 
 export default defineConfig({
   plugins: [
@@ -18,7 +23,15 @@ export default defineConfig({
       presets: [
         presetUno(),
         presetAttributify(),
-        presetIcons()
+        presetIcons({
+          // extraProperties: {
+          //   'display': 'inline-block',
+          //   'vertical-align': 'middle',
+          // },
+          collections: {
+            custom: FileSystemIconLoader(iconDirectory),
+          }
+        })
       ]
     }),
     Pages({

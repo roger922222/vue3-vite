@@ -6,5 +6,6 @@
     </div>
     <div i-custom-icon />
     <div i-custom-multi-line-attr />
+    <i class="vscode-icons:file-type-reactjs"></i>
   </div>
 </template>

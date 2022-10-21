@@ -5,7 +5,7 @@ const menus = Object.keys(pages)
   .filter(page => page.v.menu)
   .map(page => ({
     name: page.v.menu,
-    url: page.k.replace('../pages', '').replace('.vue', ''),
+    url: page.k.replace(/(.*\/)*([^.]+).*/ig, "/$2"),
     icon: page.v.icon
   }))
 console.log('menus', menus)
@@ -44,7 +44,7 @@ const courses = reactive(menus)
         <li v-for="(item, index) in courses" :key="index">
           <a class="flex cursor-pointer dark:hover:bg-gray-700/50 hover:bg-gray-600 hover:bg-opacity-50 py-2"
             :href="item.url"><span class="inline-flex justify-center items-center w-12 h-6 flex-none text-gray-300"><i
-                :class="item.icon"></i></span><span class="grow text-gray-300">{{ item.name }}</span>
+                :class="item.icon" class="w-10px h-10px"></i></span><span class="grow text-gray-300">{{ item.name }}</span>
           </a>
         </li>
       </ul>
